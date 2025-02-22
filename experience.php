@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<?php include 'sidebar.php';?>
+
+<body class="bg-gray-100 flex flex-col sm:flex-row">
+
+
+    <div class="flex-1 flex items-center justify-center min-h-screen text-center p-4 sm:p-8 transition-all duration-500">
+        <div class="max-w-4xl mx-auto w-full">
+            <div class="mb-4">
+                <i class="fas fa-briefcase text-6xl text-red-500 block mx-auto mb-2"></i>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-wider drop-shadow-lg animate-pulse mb-8">My Experience</h1>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
+                    <div class="flex flex-col items-center mb-4"> 
+                        <i class="fas fa-cogs text-2xl text-red-500 mb-2"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900">Test Automation: Web Application Testing</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                    <li>Reduced testing time by 40% and improved bug detection.</li>
+                        <li>Automated regression tests using Selenium WebDriver & JavaScript.</li>
+                        
+                        <li>Experience in testing for Mobility Chatbot, Monitoring Tool, and Contract Tracking.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
+                    <div class="flex flex-col items-center mb-4">
+                        <i class="fas fa-palette text-2xl text-red-500 mb-2"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900">UI/UX Case Study: Website Redesign</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>Redesigned a WordPress-based website, enhancing user engagement.</li>
+                        <li>Implemented Figma wireframes and improved mobile responsiveness.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <a href="achievements.php" class="inline-block mt-8 px-6 py-3 bg-red-500 text-white text-lg font-bold rounded-full shadow-lg transform transition duration-300 hover:bg-red-600 hover:scale-105">
+                Next <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+      .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+    </style>
+
+</body>
+</html>

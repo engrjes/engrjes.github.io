@@ -1,0 +1,49 @@
+<?php include 'sidebar.php'; ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body class="bg-gray-100 flex">
+
+    
+
+    <div class="flex-1 flex items-center justify-center min-h-screen text-center transition-all duration-500">
+        <div class="p-8 max-w-3xl">
+            <div class="mb-4">
+            <div class="relative inline-block mb-6">
+                <img src="dp.jpg" alt="Profile Picture" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-red-500 shadow-lg transition duration-500 transform hover:scale-110 mx-auto">
+            </div><h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-wider drop-shadow-lg animate-pulse mb-8">About Me</h1>
+            </div>
+            <p class="text-lg text-gray-600 mt-2 animate-fadeIn">Get to know more about me.</p>
+
+            <div class="mt-8 p-6 bg-white shadow-xl rounded-lg transform transition duration-500 hover:scale-105">
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    I am a passionate and dedicated professional with experience in software testing, virtual assistance, and web development.
+                    My expertise lies in ensuring high-quality software products, assisting clients with administrative and marketing tasks, and
+                    creating modern, responsive websites.
+                </p>
+            </div>
+
+            <a href="education.php" class="inline-block mt-6 px-6 py-3 bg-red-500 text-white text-lg font-bold rounded-full shadow-lg transform transition duration-300 hover:bg-red-600 hover:scale-105">
+                Next <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+    </style>
+
+</body>
+</html>
