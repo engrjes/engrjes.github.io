@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
+<div id="navbar-container"></div>
 
 
 <body class="bg-gray-100 flex flex-col sm:flex-row">
@@ -60,6 +61,20 @@
         }
       .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
     </style>
-
+<script>
+    // Load the navbar dynamically
+    fetch('navbar.html')
+           .then(response => response.text())
+           .then(data => {
+               document.getElementById('navbar-container').innerHTML = data;
+   
+               // Attach the event listener AFTER loading the navbar
+               document.querySelector(".hamburger").addEventListener("click", function () {
+                   document.querySelector(".nav-links").classList.toggle("show");
+                   document.querySelector(".hamburger").classList.toggle("active");
+               });
+           })
+           .catch(error => console.error('Error loading navbar:', error));
+   </script>
 </body>
 </html>

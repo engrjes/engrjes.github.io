@@ -7,7 +7,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
+<div id="navbar-container"></div>
 <body class="bg-gray-100 flex flex-col">
 
 
@@ -50,22 +50,20 @@
         .animate-progress { animation: progress 2s linear forwards; }
     </style>
 
-    <script>
-       const currentPage = window.location.pathname.split('/').pop();
-    const links = document.querySelectorAll('.navbar a');
-
-    links.forEach(link => {
-        if (link.href.includes(currentPage)) {
-            link.classList.add('active');
-        }
-    });
-
-    const burgerButton = document.querySelector('button[data-collapse-toggle="navbar-default"]');
-    const navbarLinks = document.getElementById('navbar-default');
-
-    burgerButton.addEventListener('click', () => {
-        navbarLinks.classList.toggle('hidden');
-    });
-    </script>
+<script>
+    // Load the navbar dynamically
+    fetch('navbar.html')
+           .then(response => response.text())
+           .then(data => {
+               document.getElementById('navbar-container').innerHTML = data;
+   
+               // Attach the event listener AFTER loading the navbar
+               document.querySelector(".hamburger").addEventListener("click", function () {
+                   document.querySelector(".nav-links").classList.toggle("show");
+                   document.querySelector(".hamburger").classList.toggle("active");
+               });
+           })
+           .catch(error => console.error('Error loading navbar:', error));
+   </script>
 </body>
 </html>
