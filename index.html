@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
+    <!-- Custom Animations -->
+    <style>
+        @keyframes fireAnimation {
+            0% {
+                transform: scale(1);
+                filter: brightness(100%) hue-rotate(0deg);
+            }
+            50% {
+                transform: scale(1.1);
+                filter: brightness(150%) hue-rotate(90deg);
+            }
+            100% {
+                transform: scale(1);
+                filter: brightness(100%) hue-rotate(0deg);
+            }
+        }
+
+        .fire-effect {
+            animation: fireAnimation 1.5s ease-in-out infinite;
+        }
+
+        .navbar a:hover {
+            color: #f5a623; /* Warm Gold */
+            text-shadow: 0 0 10px rgba(245, 166, 35, 1), 0 0 20px rgba(245, 166, 35, 1), 0 0 30px rgba(245, 166, 35, 1);
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+
+        .navbar {
+            background-color: #f87171; /* Set navbar color to #f87171 */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Center the content */
+        .center-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .btn-view-portfolio {
+            background-color: #f87171;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-view-portfolio:hover {
+            background-color: #f5a623;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+<!-- Main Content -->
+<div class="center-content">
+    <div class="text-center">
+        <h1 class="text-4xl font-bold text-gray-900">Welcome to My Portfolio</h1>
+        <p class="mt-4 text-lg text-gray-700">I'm Jessa, a passionate and dedicated developer. Check out my work below!</p>
+        
+        <!-- View Portfolio Button -->
+        <a href="index.php" class="btn-view-portfolio mt-8">View Portfolio</a>
+    </div>
+</div>
+
+</body>
+</html>
