@@ -4,53 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education - Portfolio</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
-<div id="navbar-container"></div>
-<body class="bg-gray-100 flex">
-
-    
-
+<body class="bg-[#9CA3AF] flex">
     <div class="flex-1 flex items-center justify-center min-h-screen text-center transition-all duration-500">
         <div class="p-8 max-w-3xl">
             <div class="mb-4">
-                <i class="fas fa-graduation-cap text-6xl text-red-500 block mx-auto mb-2"></i>
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-wider drop-shadow-lg animate-pulse mb-8">Education</h1>
+                <i class="fas fa-graduation-cap text-6xl text-gray-600 block mx-auto mb-2"></i> <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-wider drop-shadow-lg animate-pulse mb-8">Education</h1>
             </div>
-            <p class="text-lg text-gray-600 mt-2 animate-fadeIn">Here’s a look at my educational background.</p>
-
+            <p class="text-lg text-gray-900 font-medium mt-2 animate-fadeIn">Here’s a look at my educational background.</p>
             <div class="mt-8 bg-white p-6 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
                 <div class="flex flex-col items-center mb-4">
-                    <i class="fas fa-graduation-cap text-2xl text-red-500 mb-2"></i>
-                    <h2 class="text-xl font-semibold text-gray-700 text-center">Bachelor of Science in Computer Engineering</h2>
+                    <i class="fas fa-graduation-cap text-2xl text-gray-600 mb-2"></i>
+                    <h2 class="text-xl font-semibold text-gray-900 text-center">Bachelor of Science in Computer Engineering</h2>
                 </div>
-                <p class="text-gray-600 text-md mt-2">Lipa City Colleges (2018 - 2022)</p>
-                <p class="text-gray-600 text-md mt-2">Dean’s Lister with a strong foundation in software testing, automation testing and 
-                    quality assurance. Specialized in electrical tools such as Arduino and Raspberry Pi, database management, 
-                    and networking using CISCO. Developed projects focused on embedded systems, database optimization and network simulation.
-                </p>
+                <p class="text-gray-900 font-medium text-md mt-2">Lipa City Colleges (2018 - 2022)</p>
+                <p class="text-gray-900 font-medium text-md mt-2">Dean's Lister, specializing in software testing and automation testing.</p>
             </div>
-
             <div class="mt-8 bg-white p-6 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
                 <div class="flex flex-col items-center mb-4">
-                    <i class="fas fa-certificate text-2xl text-red-500 mb-2"></i>
-                    <h2 class="text-xl font-semibold text-gray-700 text-center">Specialization in Embedded Systems and Networking </h2>
+                    <i class="fas fa-certificate text-2xl text-gray-600 mb-2"></i>
+                    <h2 class="text-xl font-semibold text-gray-900 text-center">Specialization in Software Testing and Automation Testing</h2>
                 </div>
-                <p class="text-gray-600 text-md mt-2">Lipa City Colleges (2022)</p>
-                <p class="text-gray-600 text-md mt-2">Gained expertise in designing and implementing embedded systems using Arduino and Raspberry Pi.
-                     Focused on circuit design, microcontroller programming and IoT applications. Developed networking skills with CISCO, 
-                     including configuring and troubleshooting network infrastructures.
-                </p>
+                <p class="text-gray-900 font-medium text-md mt-2">Lipa City Colleges (2022)</p>
+                <p class="text-gray-900 font-medium text-md mt-2">Focused on advanced testing methodologies, tools, and frameworks for software quality assurance.</p>
             </div>
-
-            <a href="skills.html" class="inline-block mt-6 px-6 py-3 bg-red-500 text-white text-lg font-bold rounded-full shadow-lg transform transition duration-300 hover:bg-red-600 hover:scale-105">
+            <a href="skills.html" class="inline-block mt-6 px-6 py-3 bg-gray-600 text-white text-lg font-bold rounded-full shadow-lg transform transition duration-300 hover:bg-gray-700 hover:scale-105">
                 Next <i class="fas fa-arrow-right"></i>
             </a>
         </div>
     </div>
-
     <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-20px); }
@@ -58,20 +42,5 @@
         }
         .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
     </style>
-<script>
-    // Load the navbar dynamically
-    fetch('navbar.html')
-           .then(response => response.text())
-           .then(data => {
-               document.getElementById('navbar-container').innerHTML = data;
-   
-               // Attach the event listener AFTER loading the navbar
-               document.querySelector(".hamburger").addEventListener("click", function () {
-                   document.querySelector(".nav-links").classList.toggle("show");
-                   document.querySelector(".hamburger").classList.toggle("active");
-               });
-           })
-           .catch(error => console.error('Error loading navbar:', error));
-   </script>
 </body>
 </html>

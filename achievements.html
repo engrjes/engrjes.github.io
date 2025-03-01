@@ -4,28 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achievements - Portfolio</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
-<div id="navbar-container"></div>
-<body class="bg-gray-100 flex flex-col sm:flex-row">
-
-
+<body class="bg-[#9CA3AF] flex flex-col sm:flex-row">
     <div class="flex-1 flex items-center justify-center min-h-screen text-center p-4 sm:p-8 transition-all duration-500">
         <div class="max-w-4xl mx-auto w-full">
             <div class="mb-4">
-                <i class="fas fa-trophy text-6xl text-red-500 block mx-auto mb-2"></i>
+                <i class="fas fa-trophy text-6xl text-gray-600 block mx-auto mb-2"></i>
                 <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-wider drop-shadow-lg animate-pulse mb-8">My Achievements</h1>
             </div>
-
             <div class="space-y-8">
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
                     <div class="mb-4">
-                        <i class="fas fa-certificate text-2xl text-red-500 mr-3"></i>
+                        <i class="fas fa-certificate text-2xl text-gray-600 mr-3"></i>
                         <h3 class="text-2xl font-semibold text-gray-900 inline-block">Certificates & Trainings</h3>
                     </div>
-                    <ul class="text-left text-gray-600 space-y-2">
+                    <ul class="text-left text-gray-900 font-medium space-y-2">
                         <li>➢ MySQL Online Training (9hrs)</li>
                         <li>➢ How to Build a Career in Software Development</li>
                         <li>➢ Introduction to Cloud Computing</li>
@@ -41,27 +36,23 @@
                         <li>➢ Static, Dynamic, Black-box and White-box Testing</li>
                     </ul>
                 </div>
-
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
                     <div class="mb-4">
-                        <i class="fas fa-award text-2xl text-red-500 mr-3"></i>
+                        <i class="fas fa-award text-2xl text-gray-600 mr-3"></i>
                         <h3 class="text-2xl font-semibold text-gray-900 inline-block">Awards</h3>
                     </div>
-                    <ul class="text-left text-gray-600 space-y-2">
+                    <ul class="text-left text-gray-900 font-medium space-y-2">
                         <li>➢ Best Thesis & Presenter Awardee</li>
                         <li>➢ Sports Awardee</li>
                         <li>➢ Back to Back PRISAA Champion (Badminton)</li>
                     </ul>
                 </div>
-
             </div>
-
-            <a href="contact.html" class="inline-block mt-8 px-6 py-3 bg-red-500 text-white text-lg font-bold rounded-full shadow-lg transform transition duration-300 hover:bg-red-600 hover:scale-105">
+            <a href="contact.html" class="inline-block mt-8 px-6 py-3 bg-gray-600 text-white text-lg font-bold rounded-full shadow-lg transform transition duration-300 hover:bg-gray-700 hover:scale-105">
                 Next <i class="fas fa-arrow-right"></i>
             </a>
         </div>
     </div>
-
     <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-20px); }
@@ -69,20 +60,5 @@
         }
         .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
     </style>
-<script>
-    // Load the navbar dynamically
-    fetch('navbar.html')
-           .then(response => response.text())
-           .then(data => {
-               document.getElementById('navbar-container').innerHTML = data;
-   
-               // Attach the event listener AFTER loading the navbar
-               document.querySelector(".hamburger").addEventListener("click", function () {
-                   document.querySelector(".nav-links").classList.toggle("show");
-                   document.querySelector(".hamburger").classList.toggle("active");
-               });
-           })
-           .catch(error => console.error('Error loading navbar:', error));
-   </script>
 </body>
 </html>
