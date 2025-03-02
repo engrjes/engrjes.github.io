@@ -8,7 +8,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
 <body class="bg-gray-300 flex flex-col sm:flex-row">
-    <div class="flex-1 flex items-center justify-center min-h-screen text-center p-4 sm:p-8 transition-all duration-500">
+    <!-- Navigation Bar -->
+    <header class="bg-gray-600 text-white py-4 px-6 fixed w-full top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="JS.logo.png" alt="JS Logo" class="h-10">
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-gray-300">Home</a>
+                <a href="about.html" class="hover:text-gray-300">About</a>
+                <a href="education.html" class="hover:text-gray-300">Education</a>
+                <a href="skills.html" class="hover:text-gray-300">Skills</a>
+                <a href="projects.html" class="hover:text-gray-300">Projects</a>
+                <a href="experience.html" class="hover:text-gray-300">Experience</a>
+                <a href="achievements.html" class="hover:text-gray-300">Achievements</a>
+                <a href="contact.html" class="hover:text-gray-300">Contact</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white text-2xl">&#9776;</button>
+        </div>
+        <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-gray-500 text-white flex flex-col items-center space-y-4 py-4">
+            <a href="index.html" class="hover:text-gray-300">Home</a>
+            <a href="about.html" class="hover:text-gray-300">About</a>
+            <a href="education.html" class="hover:text-gray-300">Education</a>
+            <a href="skills.html" class="hover:text-gray-300">Skills</a>
+            <a href="projects.html" class="hover:text-gray-300">Projects</a>
+            <a href="experience.html" class="hover:text-gray-300">Experience</a>
+            <a href="achievements.html" class="hover:text-gray-300">Achievements</a>
+            <a href="contact.html" class="hover:text-gray-300">Contact</a>
+        </div>
+    </header>
+
+    <div class="flex-1 flex items-center justify-center min-h-screen text-center p-4 sm:p-8 mt-20 transition-all duration-500">
         <div class="max-w-4xl mx-auto w-full">
             <div class="mb-8">
                 <i class="fas fa-tools text-6xl text-gray-600 block mx-auto mb-2"></i>
@@ -48,46 +78,6 @@
                     <h3 class="text-xl font-semibold text-gray-900">UI/UX Design</h3>
                     <p class="text-gray-900 font-medium mt-2">Figma, Canva, Sketch</p>
                 </div>
-                <!-- WordPress -->
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
-                    <div class="flex justify-center mb-4">
-                        <i class="fab fa-wordpress fa-4x text-[#21759b]"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900">WordPress</h3>
-                    <p class="text-gray-900 font-medium mt-2">Website Building & Customization</p>
-                </div>
-                <!-- Trello -->
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
-                    <div class="flex justify-center mb-4">
-                        <i class="fab fa-trello fa-4x text-[#0079bf]"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900">Trello</h3>
-                    <p class="text-gray-900 font-medium mt-2">Project Management</p>
-                </div>
-                <!-- Shopify -->
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
-                    <div class="flex justify-center mb-4">
-                        <i class="fab fa-shopify fa-4x text-[#96bf48]"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900">Shopify</h3>
-                    <p class="text-gray-900 font-medium mt-2">E-commerce & Store Management</p>
-                </div>
-                <!-- GoHighLevel -->
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-chart-line fa-4x text-[#6a0dad]"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900">GoHighLevel</h3>
-                    <p class="text-gray-900 font-medium mt-2">CRM & Automation</p>
-                </div>
-                <!-- SEO -->
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-search fa-4x text-[#ffcc00]"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900">SEO</h3>
-                    <p class="text-gray-900 font-medium mt-2">Optimization & Analytics</p>
-                </div>
             </div>
             <!-- Next Button -->
             <a href="projects.html" class="inline-block mt-8 px-6 py-3 bg-gray-600 text-white text-lg font-bold rounded-full shadow-lg transform transition duration-300 hover:bg-gray-700 hover:scale-105">
@@ -95,12 +85,15 @@
             </a>
         </div>
     </div>
-    <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
-    </style>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
