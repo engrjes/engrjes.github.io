@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
 <body class="bg-gray-300 flex flex-col sm:flex-row">
-    <!-- Navigation Bar -->
     <header class="bg-gray-600 text-white py-4 px-6 fixed w-full top-0 z-10">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="flex items-center">
@@ -44,42 +43,64 @@
                 <i class="fas fa-tools text-6xl text-gray-600 block mx-auto mb-2"></i>
                 <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-wider drop-shadow-lg animate-pulse">My Skills</h1>
             </div>
-            <!-- Skills Grid -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Web Development -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                <!-- Software Testing -->
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-code fa-4x text-blue-500"></i>
+                    <div class="flex flex-col items-center mb-4">
+                        <i class="fas fa-bug text-gray-600 text-3xl mb-2"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900">Software Testing</h3>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900">Web Development</h3>
-                    <p class="text-gray-900 font-medium mt-2">HTML, CSS, JavaScript, PHP, TailwindCSS</p>
+                    <p class="text-gray-900 font-medium">Manual & Automation Testing, Selenium, API Testing</p>
                 </div>
-                <!-- Database Management -->
+                <!-- Programming -->
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-database fa-4x text-orange-500"></i>
+                    <div class="flex flex-col items-center mb-4">
+                        <i class="fas fa-code text-gray-600 text-3xl mb-2"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900">Programming</h3>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900">Database Management</h3>
-                    <p class="text-gray-900 font-medium mt-2">MySQL, PostgreSQL, MongoDB</p>
+                    <p class="text-gray-900 font-medium">C++, JavaScript, PHP, SQL, Python</p>
                 </div>
-                <!-- DevOps -->
+                <!-- Networking -->
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-cogs fa-4x text-gray-700"></i>
+                    <div class="flex flex-col items-center mb-4">
+                        <i class="fas fa-network-wired text-gray-600 text-3xl mb-2"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900">Networking</h3>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900">DevOps</h3>
-                    <p class="text-gray-900 font-medium mt-2">Docker, Kubernetes, CI/CD</p>
+                    <p class="text-gray-900 font-medium">Cisco Networking, CCNA, Cloud Computing</p>
                 </div>
-                <!-- UI/UX Design -->
+                <!-- Trello -->
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-paint-brush fa-4x text-pink-500"></i>
+                    <div class="flex flex-col items-center mb-4">
+                        <i class="fab fa-trello text-blue-500 text-3xl mb-2"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900">Trello</h3>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900">UI/UX Design</h3>
-                    <p class="text-gray-900 font-medium mt-2">Figma, Canva, Sketch</p>
+                    <p class="text-gray-900 font-medium">Task & Project Management</p>
+                </div>
+                <!-- GoHighLevel -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
+                    <div class="flex flex-col items-center mb-4">
+                        <img src="GoHighLevel.png" alt="GoHighLevel" class="h-10 mb-2">
+                        <h3 class="text-2xl font-semibold text-gray-900">GoHighLevel</h3>
+                    </div>
+                    <p class="text-gray-900 font-medium">CRM & Automation</p>
+                </div>
+                <!-- WordPress -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
+                    <div class="flex flex-col items-center mb-4">
+                        <i class="fab fa-wordpress text-blue-700 text-3xl mb-2"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900">WordPress</h3>
+                    </div>
+                    <p class="text-gray-900 font-medium">Website Design & Development</p>
+                </div>
+                <!-- Shopify -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
+                    <div class="flex flex-col items-center mb-4">
+                        <i class="fab fa-shopify text-green-600 text-3xl mb-2"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900">Shopify</h3>
+                    </div>
+                    <p class="text-gray-900 font-medium">E-commerce Management</p>
                 </div>
             </div>
-            <!-- Next Button -->
             <a href="projects.html" class="inline-block mt-8 px-6 py-3 bg-gray-600 text-white text-lg font-bold rounded-full shadow-lg transform transition duration-300 hover:bg-gray-700 hover:scale-105">
                 Next <i class="fas fa-arrow-right"></i>
             </a>
@@ -87,10 +108,8 @@
     </div>
 
     <script>
-        // Mobile Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
