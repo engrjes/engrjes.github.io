@@ -21,6 +21,17 @@
             z-index: -1;
         }
 
+        /* Dark overlay to improve text contrast */
+        .dark-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
         /* Keyframe animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-20px); }
@@ -33,12 +44,18 @@
             100% { width: 100%; }
         }
         .animate-progress { animation: progress 2s linear forwards; }
+
+        /* Stronger Text Shadow for better visibility */
+        .text-shadow {
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+        }
     </style>
 </head>
 <body class="bg-gray-300 flex flex-col relative h-screen w-screen overflow-hidden text-white">
 
     <!-- Background Slideshow -->
     <div id="bg-slideshow" class="bg-slideshow"></div>
+    <div class="dark-overlay"></div> <!-- Dark overlay added -->
 
     <!-- Sidebar Navigation -->
     <?php include 'sidebar.php'; ?>
@@ -53,22 +70,34 @@
 
     <div class="flex-1 flex items-center justify-center min-h-screen text-center p-4 sm:p-8 transition-all duration-500">
         <div class="max-w-lg mx-auto w-full">
+            
+            <!-- Profile Picture -->
             <div class="relative inline-block mb-6">
                 <img src="dp.JPG" alt="Profile Picture" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-gray-600 shadow-lg transition duration-500 transform hover:scale-110 mx-auto">
             </div>
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-wider drop-shadow-lg animate-pulse">Jessa Sarmiento</h1>
-            <p class="text-lg sm:text-xl text-gray-200 mt-2 animate-fadeIn">Explore my work, experience, and skills.</p>
 
+            <!-- Name & Introduction with Background Effect -->
+            <div class="bg-black bg-opacity-50 p-5 rounded-lg inline-block">
+                <h1 class="text-5xl sm:text-5xl font-extrabold text-white tracking-widest text-shadow animate-pulse">
+                    JESSA SARMIENTO
+                </h1>
+                <p class="text-lg sm:text-2xl font-bold text-gray-200 mt-2 text-shadow animate-fadeIn">
+                    Explore my work, experience and skills.
+                </p>
+            </div>
+
+            <!-- Animated Progress Bar -->
             <div class="w-1/2 sm:w-1/3 mx-auto mt-6 h-6 bg-gray-500 rounded-full overflow-hidden shadow-xl">
                 <div class="h-full bg-gray-600 animate-progress"></div>
             </div>
 
+            <!-- Buttons in Gray -->
             <div class="mt-6 flex justify-center space-x-4">
-                <a href="about.html" class="inline-block px-6 py-3 bg-gray-600 text-white text-lg font-bold rounded-full shadow-lg transform transition duration-300 hover:bg-gray-700 hover:scale-105">
-                    Learn More
+                <a href="about.html" class="inline-block px-8 py-4 bg-gray-600 text-white text-xl font-extrabold rounded-full shadow-lg transform transition duration-300 hover:bg-gray-700 hover:scale-105">
+                    Want to know more about me?
                 </a>
-                <a href="contact.html" class="inline-block px-6 py-3 bg-gray-600 text-white text-lg font-bold rounded-full shadow-lg transform transition duration-300 hover:bg-gray-700 hover:scale-105">
-                    Contact
+                <a href="contact.html" class="inline-block px-8 py-4 bg-gray-600 text-white text-xl font-extrabold rounded-full shadow-lg transform transition duration-300 hover:bg-gray-700 hover:scale-105">
+                    Ready to create something great?
                 </a>
             </div>
         </div>
