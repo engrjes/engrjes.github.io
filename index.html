@@ -5,11 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Background Slideshow */
+        .bg-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.4; /* Lower contrast */
+            transition: background-image 1s ease-in-out;
+            z-index: -1;
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        .animate-progress { animation: progress 2s linear forwards; }
+    </style>
 </head>
-<body class="bg-gray-300 flex flex-col">
-    <header class="bg-gray-800"> 
-        <div class="container mx-auto flex flex-wrap py-8 flex-col md:flex-row items-center"> <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                <img src="JS.logo.png" alt="JS Logo" class="h-16"> 
+<body class="bg-gray-300 flex flex-col relative h-screen w-screen overflow-hidden text-white">
+
+    <!-- Background Slideshow -->
+    <div id="bg-slideshow" class="bg-slideshow"></div>
+
+    <!-- Sidebar Navigation -->
+    <?php include 'sidebar.php'; ?>
+
+    <header class="bg-gray-800 w-full py-4 fixed top-0 z-10"> 
+        <div class="container mx-auto flex flex-wrap items-center justify-between">
+            <a class="flex title-font font-medium items-center text-white">
+                <img src="JS.logo.png" alt="JS Logo" class="h-16">
             </a>
         </div>
     </header>
@@ -19,11 +56,13 @@
             <div class="relative inline-block mb-6">
                 <img src="dp.JPG" alt="Profile Picture" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-gray-600 shadow-lg transition duration-500 transform hover:scale-110 mx-auto">
             </div>
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-wider drop-shadow-lg animate-pulse">Jessa Sarmiento</h1>
-            <p class="text-lg sm:text-xl text-gray-600 mt-2 animate-fadeIn">Explore my work, experience and skills.</p>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-wider drop-shadow-lg animate-pulse">Jessa Sarmiento</h1>
+            <p class="text-lg sm:text-xl text-gray-200 mt-2 animate-fadeIn">Explore my work, experience, and skills.</p>
+
             <div class="w-1/2 sm:w-1/3 mx-auto mt-6 h-6 bg-gray-500 rounded-full overflow-hidden shadow-xl">
                 <div class="h-full bg-gray-600 animate-progress"></div>
             </div>
+
             <div class="mt-6 flex justify-center space-x-4">
                 <a href="about.html" class="inline-block px-6 py-3 bg-gray-600 text-white text-lg font-bold rounded-full shadow-lg transform transition duration-300 hover:bg-gray-700 hover:scale-105">
                     Learn More
@@ -34,19 +73,25 @@
             </div>
         </div>
     </div>
-    <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
-        @keyframes progress {
-            0% { width: 0%; }
-            100% { width: 100%; }
-        }
-        .animate-progress { animation: progress 2s linear forwards; }
-    </style>
+
     <script>
+        // Responsive Background Image Slideshow
+        const images = ["bg_1.jpg", "bg_2.jpg", "bg_3.jpg", "bg_4.jpg"];
+        let currentIndex = 0;
+        const bgSlideshow = document.getElementById("bg-slideshow");
+
+        function changeBackground() {
+            bgSlideshow.style.backgroundImage = `url('${images[currentIndex]}')`;
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        // Initial background load
+        changeBackground();
+
+        // Change background every 5 seconds
+        setInterval(changeBackground, 5000);
+
+        // Navbar Active Link Highlight
         const currentPage = window.location.pathname.split('/').pop();
         const links = document.querySelectorAll('.navbar a');
         links.forEach(link => {
@@ -54,11 +99,14 @@
                 link.classList.add('active');
             }
         });
+
+        // Sidebar Toggle (If you have a sidebar menu)
         const burgerButton = document.querySelector('button[data-collapse-toggle="navbar-default"]');
         const navbarLinks = document.getElementById('navbar-default');
         burgerButton.addEventListener('click', () => {
             navbarLinks.classList.toggle('hidden');
         });
     </script>
+
 </body>
 </html>
